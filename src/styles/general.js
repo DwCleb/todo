@@ -33,9 +33,10 @@ export default {
 
   title: {
     textAlign: 'center',
-    color: colors.darker,
+    color: colors.white,
     fontSize: 24,
     fontWeight: 'bold',
+    fontFamily: 'Montserrat-Bold',
     marginBottom: metrics.baseMargin,
   },
 
@@ -46,7 +47,7 @@ export default {
     paddingHorizontal: metrics.basePadding,
     borderWidth: 1,
     borderColor: colors.light,
-    width: '100%',
+    width: metrics.screenWidth * 0.8,
   },
 
   inputHalf: {
@@ -117,9 +118,9 @@ export default {
   },
 
   button: {
-    backgroundColor: colors.darker,
+    backgroundColor: colors.secondary,
     borderRadius: metrics.baseRadius,
-    height: 50,
+    height: 58,
     marginTop: metrics.baseMargin,
     justifyContent: 'center',
     alignItems: 'center',

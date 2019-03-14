@@ -15,6 +15,7 @@ import {
   TouchableOpacity,
   ActivityIndicator,
 } from 'react-native';
+import SvgUri from 'react-native-svg-uri';
 import { StackActions, NavigationActions } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
@@ -26,6 +27,7 @@ class Login extends Component {
 
   state = {
     login: '',
+    loading: false,
     password: '',
   }
 
@@ -33,91 +35,80 @@ class Login extends Component {
   render() {
     const {
       login,
+      loading,
       password,
     } = this.state;
     const { navigation, user } = this.props;
     return (
-      <ScrollView contentContainerStyle={styles.container} bounces={false}>
-        { user.isLogged && this.signInNavigation() }
-        { user.fbSignUp && this.fbSignUp() }
-        { !!user.message && this.showMessage() }
-        <View>
-          <View style={styles.logoImage}>
-            <Image
-              source={require('images/logo.png')}
-              style={styles.logo}
-              resizeMode="contain"
-              alignSelf="center"
+      <View style={styles.container}> 
+          <View style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignContent: 'center',
+            marginTop: 100,
+            marginLeft: 100,
+          }}>
+          <SvgUri
+          width="200"
+          height="200"
+              source={{uri: 'https://github.com/DwCleb/todo/blob/master/src/assets/Interse%C3%A7%C3%A3o%201.svg'}}
             />
           </View>
-          {/* <Text style={styles.title}>Login</Text> */}
+        <View style={styles.contentView}>
+          <View>
+            <SvgUri
+              style={{flex: 1,justifyContent: 'center', alignItems: 'center', left: 20, top: -40}}
+              source={require('assets/logo.svg')}
+            />
+          </View>
+          <Text style={[styles.title, { marginBottom: 25 }]}>GoodTask</Text>
           <TextInput
             style={styles.input}
             keyboardType="numeric"
             autoCapitalize="none"
             autoCorrect={false}
-            placeholder="CPF"
+            placeholder="Login"
             value={login}
             onChangeText={login => this.setState({ login })}
             underlineColorAndroid="transparent"
+            placeholderTextColor="#FFFFFF"
           />
           <TextInput
             secureTextEntry
             style={styles.input}
             autoCapitalize="none"
             autoCorrect={false}
-            placeholder="Senha"
+            placeholder="Password"
             value={password}
             onChangeText={password => this.setState({ password })}
             underlineColorAndroid="transparent"
+            placeholderTextColor="#FFFFFF"
           />
           <TouchableOpacity
             style={styles.button}
             onPress={this.signIn}
             activeOpacity={0.8}
           >
-            { user.isLoading
+            { loading
               ? <ActivityIndicator size="small" color="#FFF" />
-              : <Text style={styles.buttonText}> Entrar </Text>
+              : <Text style={styles.buttonText}> Enter </Text>
             }
           </TouchableOpacity>
-          
-          <TouchableOpacity
-            style={styles.facebookButton}
-            onPress={this.fbLogin}
-            activeOpacity={0.8}
-          >
-            { user.isFbLoading
-              ? <ActivityIndicator size="small" color="#FFF" />
-              : (
-                <Text>
-                  <Icon name="facebook-official" size={28} style={styles.facebookIcon} />
-                  <Text style={styles.facebookButtonText}> Entrar com Facebook </Text>
-                </Text>
-              )
-            }
-          </TouchableOpacity>
+          </View>
 
-          <TouchableOpacity
-            activeOpacity={0.8}
-            style={styles.singUpButton}
-            title="Cadastre-se"
-            onPress={() => {
-              navigation.navigate('SignUp', { name: 'SignUp' });
-            }}
-          >
-            <Text style={styles.signUpButtonText}> Cadastre-se </Text>
-          </TouchableOpacity>
+
+          <View style={styles.signUpView}>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              style={styles.signUpButton}
+              title="Don't have account"
+            >
+              <Text style={styles.signUpButtonText}> Don't have account </Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </ScrollView>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  user: state.user,
-});
-
-const mapDispatchToProps = dispatch => bindActionCreators(UserActions, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default Login;

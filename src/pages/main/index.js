@@ -19,12 +19,14 @@ import styles from './styles';
 
 class Main extends Component {
   static navigationOptions = {
-    title: 'PrixPark',
+    title: 'Hello!',
   }
   // static navigationOptions = ({ navigation }) => ({
   //   headerLeft: <HeaderLeft navigation={navigation} />,
   // })
-
+  state = {
+    loading: false,
+  };
 
   navigateOnPress(route) {
     const { navigation } = this.props;
@@ -32,25 +34,10 @@ class Main extends Component {
   }
 
   render() {
-    const {
-      navigation,
-      user,
-      credit,
-    } = this.props;
+
     return (
       <SafeAreaView style={styles.container}>
-        <View style={styles.helloContainer}>
-          <Text style={styles.helloText}>{`Olá, ${user.data.nome.split(' ')[0]}`}</Text>
-        </View>
-        <View style={styles.balanceContainer}>
-          <Text style={styles.balanceTitle}>Saldo Disponível</Text>
-          {credit.isLoading
-            ? <ActivityIndicator size="small" color="#000" />
-            : (
-              <Text style={styles.balanceText}>{`R$ ${Utils.decimal(credit.balance)}`}</Text>
-            )
-          }
-        </View>
+       
         <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContentContainer} bounces={false}>
           <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('EticketBuy')} route="" icon="car" title="Estacionar" />
           <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('CreditBuy')} route="" icon="money" title="Comprar Créditos" />
@@ -65,14 +52,4 @@ class Main extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  user: state.user,
-  credit: state.credit,
-});
-
-const mapDispatchToProps = dispatch => bindActionCreators({
-  ...CreditActions,
-  ...UserActions,
-}, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default Main;

@@ -8,8 +8,8 @@ export default {
   black: '#000',
   none: 'none',
 
-  primary: 'rgba(0, 132, 223, 1)',
-  secondary: 'rgba(235, 13, 64, 1)',
+  primary: '#5C6BC0',
+  secondary: '#00E5FF',
   grey: 'rgba(226, 231, 234, 1)',
   darkGrey: 'rgba(183, 195, 200, 1)',
   info: 'rgba(185,220,233, 1)',

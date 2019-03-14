@@ -5,18 +5,19 @@ import { metrics, colors, general } from 'styles';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexWrap: 'wrap',
     backgroundColor: colors.primary,
     padding: metrics.basePadding * 2,
     justifyContent: 'center',
     alignItems: 'stretch',
   },
 
+  contentView: {
+    flex: 1,
+    justifyContent: 'center',
+  },
   title: {
-    textAlign: 'center',
-    color: colors.white,
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: metrics.baseMargin,
+    ...general.title,
   },
 
   logoImage: {
@@ -33,32 +34,34 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    backgroundColor: colors.white,
-    borderRadius: metrics.baseRadius,
-    height: 40,
-    paddingHorizontal: metrics.basePadding,
-    marginBottom: metrics.baseMargin,
+    ...general.input,
+    color: colors.white,
+    backgroundColor: colors.transparent,
+    borderWidth: 2,
+    borderLeftColor: colors.transparent,
+    borderTopColor: colors.transparent,
+    borderRightColor: colors.transparent,
+    paddingHorizontal: metrics.basePadding - 10,
+    marginBottom: metrics.baseMargin + 5,
+    fontSize: 20,
+    fontFamily: 'Montserrat-Regular',
   },
 
   button: {
-    backgroundColor: colors.darker,
-    borderRadius: metrics.baseRadius,
-    height: 50,
-    marginTop: metrics.baseMargin,
-    justifyContent: 'center',
-    alignItems: 'center',
+    ...general.button,
+    marginTop: 20,
   },
 
   buttonText: {
     color: colors.white,
-    fontWeight: 'bold',
-    fontSize: 14,
+    fontWeight: '300',
+    fontSize: 20,
   },
 
   facebookButton: {
     backgroundColor: colors.facebook,
     borderRadius: metrics.baseRadius,
-    height: 50,
+    height: 58,
     marginTop: metrics.baseMargin,
     justifyContent: 'center',
     alignItems: 'center',
@@ -76,16 +79,18 @@ const styles = StyleSheet.create({
     color: colors.white,
   },
 
-  signUpButton: {
-    marginTop: metrics.baseMargin,
-    backgroundColor: colors.light,
-    padding: 10,
+  signUpView : {
+    flexWrap: 'wrap',
     justifyContent: 'center',
+  },
+
+  signUpButton: {
+    backgroundColor: colors.transparent,
+    justifyContent: 'flex-end',
     alignItems: 'center',
   },
 
   signUpButtonText: {
-    marginTop: metrics.baseMargin,
     color: colors.light,
     textAlign: 'center',
   },

@@ -27,9 +27,8 @@ export default class MenuItem extends Component {
     return(
       <View style={styles.container}>
         <TouchableOpacity onPress={() => onPress()} activeOpacity={0.8} style={styles.iconContainer}>
-          <Icon name={icon} size={25} color="#F00" />
+          <Icon name={icon} size={25} color="#5C6BC0" />
         </TouchableOpacity>
-        <Text style={styles.title}>{title}</Text>
       </View>
     )
   }

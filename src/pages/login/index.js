@@ -4,6 +4,27 @@
  */
 
 import React, { Component } from 'react';
+import Svg,{
+  Circle,
+  Ellipse,
+  G,
+  TSpan,
+  TextPath,
+  Path,
+  Polygon,
+  Polyline,
+  Line,
+  Rect,
+  Use,
+  Symbol,
+  Defs,
+  LinearGradient,
+  RadialGradient,
+  Stop,
+  ClipPath,
+  Pattern,
+  Mask,
+} from 'react-native-svg';
 import {
   Alert,
   Text,
@@ -12,12 +33,15 @@ import {
   Button,
   TextInput,
   ScrollView,
+  StyleSheet,
   TouchableOpacity,
   ActivityIndicator,
 } from 'react-native';
-import SvgUri from 'react-native-svg-uri';
-import { StackActions, NavigationActions } from 'react-navigation';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Intersecao1 from 'components/Intersecao1';
+import Intersecao2 from 'components/Intersecao2';
+import Agrupar1 from 'components/Agrupar1';
+import Agrupar2 from 'components/Agrupar2';
+import Logo from 'components/Logo';
 import styles from './styles';
 
 class Login extends Component {
@@ -31,6 +55,11 @@ class Login extends Component {
     password: '',
   }
 
+  signIn = () => {
+    const { navigation } = this.props;
+    navigation.navigate('Main');
+  }
+
 
   render() {
     const {
@@ -38,30 +67,26 @@ class Login extends Component {
       loading,
       password,
     } = this.state;
-    const { navigation, user } = this.props;
     return (
       <View style={styles.container}> 
-          <View style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            alignContent: 'center',
-            marginTop: 100,
-            marginLeft: 100,
-          }}>
-          <SvgUri
-          width="200"
-          height="200"
-              source={{uri: 'https://github.com/DwCleb/todo/blob/master/src/assets/Interse%C3%A7%C3%A3o%201.svg'}}
-            />
-          </View>
+        <View
+          style={styles.intersecao1}>
+          <Intersecao1 /> 
+        </View>
+        <View
+          style={styles.agrupar1}>
+          <Agrupar1 /> 
+        </View>
         <View style={styles.contentView}>
-          <View>
-            <SvgUri
-              style={{flex: 1,justifyContent: 'center', alignItems: 'center', left: 20, top: -40}}
-              source={require('assets/logo.svg')}
-            />
+          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+            <Logo />
           </View>
-          <Text style={[styles.title, { marginBottom: 25 }]}>GoodTask</Text>
+          <View style={{flexDirection: 'row',justifyContent: 'center', alignItems: 'center'}}>
+
+          <Text style={styles.titleG}>G</Text>
+          <Text style={styles.titleP}>:</Text>
+          </View>
+          <Text style={styles.title}>GoodTask</Text>
           <TextInput
             style={styles.input}
             keyboardType="numeric"
@@ -98,6 +123,14 @@ class Login extends Component {
 
 
           <View style={styles.signUpView}>
+            <View
+              style={styles.agrupar2}>
+              <Agrupar2 /> 
+            </View>
+            <View
+              style={styles.intersecao2}>
+              <Intersecao2 /> 
+            </View>
             <TouchableOpacity
               activeOpacity={0.8}
               style={styles.signUpButton}

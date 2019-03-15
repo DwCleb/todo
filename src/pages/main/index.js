@@ -1,7 +1,7 @@
 /**
  * Main menu
  *
- * @author: Ramon
+ * @author: Cleber
  */
 
 import React, { Component } from 'react';
@@ -14,16 +14,18 @@ import {
 import { SafeAreaView, NavigationActions, StackActions } from 'react-navigation';
 import PropTypes from 'prop-types';
 import MenuItem from 'components/MenuItem';
+import HeaderLeft from 'components/HeaderLeft';
+import HeaderRight from 'components/HeaderRight';
 import Utils from 'utils/utils';
 import styles from './styles';
 
 class Main extends Component {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     title: 'Hello!',
-  }
-  // static navigationOptions = ({ navigation }) => ({
-  //   headerLeft: <HeaderLeft navigation={navigation} />,
-  // })
+    headerLeft: <HeaderLeft />,
+    headerRight: <HeaderRight />,
+  });
+
   state = {
     loading: false,
   };
@@ -34,18 +36,17 @@ class Main extends Component {
   }
 
   render() {
-
+    const { navigation } = this.props;
     return (
       <SafeAreaView style={styles.container}>
        
         <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContentContainer} bounces={false}>
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('EticketBuy')} route="" icon="car" title="Estacionar" />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('CreditBuy')} route="" icon="money" title="Comprar Créditos" />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('CreditExtract')} route="" icon="list-alt" title="Extrato de Créditos" />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('EticketExtract')} route="" icon="ticket" title="Extrato de e-ticket" />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('VehicleRegister')} route="" icon="plus" title="Cadastrar Veículo" />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('AddressRegister')} route="" icon="home" title="Cadastrar Endereço" />
-          <MenuItem navigation={navigation} onPress={() => this.signOut()} route="" icon="sign-out" title="Sair" />
+          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('EticketBuy')} route="" icon="car" />
+          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="money"  />
+          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="list-alt"  />
+          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="ticket" />
+          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="plus" />
+          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="home"  />
         </ScrollView>
       </SafeAreaView>
     );

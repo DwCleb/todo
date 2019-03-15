@@ -3,11 +3,10 @@ import { colors, metrics } from 'styles';
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 5,
+    marginHorizontal: metrics.basePadding * 1.5,
     width: metrics.screenWidth / 4,
-    marginLeft: 5,
   },
 
   iconContainer: {
@@ -15,19 +14,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderColor: colors.light,
     borderWidth: 1,
-    borderRadius: metrics.baseRadius * 10,
-    padding: 10,
-    width: 60,
-    height: 60,
+    borderRadius: metrics.baseRadius * 4,
+    padding: metrics.basePadding,
+    marginTop: metrics.baseMargin / 2,
+    width: 124.71,
+    height: 124.71,
   },
 
-  title: {
-    marginTop: 5,
-    color: colors.dark,
-    fontSize: 14,
-    width: 70,
-    textAlign: 'center',
-  },
 });
 
 export default styles;

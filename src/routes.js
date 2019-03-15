@@ -12,9 +12,14 @@ const MainNavigator = StackNavigator({
   navigationOptions: {
     headerStyle: {
       backgroundColor: colors.primary,
+      height: 85,
     },
     headerTitleStyle: {
       color: colors.white,
+      fontSize: 24,
+      flex: 1,
+      textAlign: 'left',
+      fontFamily: 'Montserrat-Regular',
     },
     headerTintColor: colors.white,
   },

@@ -11,13 +11,60 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'stretch',
   },
+  
+  intersecao1: {
+    justifyContent: 'flex-start',
+    alignItems: 'flex-end',
+    right: - (metrics.basePadding * 2),
+    top: - (metrics.basePadding * 2),
+  },
+
+  intersecao2: {
+    justifyContent: 'flex-end',
+    alignItems: 'flex-start',
+    left: - (metrics.basePadding * 2),
+    bottom: - (metrics.basePadding * 3),
+  },
+  
+  agrupar1: {
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    left: - (metrics.basePadding * 4),
+    top: - (metrics.basePadding * 3),
+  },
+
+  agrupar2: {
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    right: - (metrics.basePadding * 3.5),
+    bottom: - (metrics.basePadding * 7),
+  },
 
   contentView: {
     flex: 1,
     justifyContent: 'center',
   },
+
   title: {
     ...general.title,
+    marginBottom: 25,
+    marginTop: -25,
+  },
+  
+  titleG: {
+    ...general.title,
+    marginTop: -165,
+    color: colors.secondary,
+    fontSize: 65,
+    fontWeight: 'bold',
+  },
+  
+  titleP: {
+    ...general.title,
+    marginTop: -171,
+    color: colors.secondary,
+    fontSize: 65,
+    fontWeight: 'bold',
   },
 
   logoImage: {

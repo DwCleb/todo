@@ -4,7 +4,7 @@ import { metrics, colors, general } from 'styles';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     flexWrap: 'wrap',
     backgroundColor: colors.primary,
     padding: metrics.basePadding * 2,
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'flex-start',
     left: - (metrics.basePadding * 2),
-    bottom: - (metrics.basePadding * 3),
+    bottom: - (metrics.basePadding * 1.5),
   },
   
   agrupar1: {
@@ -37,12 +37,13 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
     right: - (metrics.basePadding * 3.5),
-    bottom: - (metrics.basePadding * 7),
+    bottom: - (metrics.basePadding * 6),
   },
 
   contentView: {
     flex: 1,
     justifyContent: 'center',
+    marginTop: - metrics.baseMargin * 6,
   },
 
   title: {
@@ -85,6 +86,9 @@ const styles = StyleSheet.create({
     color: colors.white,
     backgroundColor: colors.transparent,
     borderWidth: 2,
+    borderTopWidth: 0,
+    borderLeftWidth: 0,
+    borderRightWidth: 0,
     borderLeftColor: colors.transparent,
     borderTopColor: colors.transparent,
     borderRightColor: colors.transparent,
@@ -96,13 +100,14 @@ const styles = StyleSheet.create({
 
   button: {
     ...general.button,
-    marginTop: 20,
+    marginTop: 5,
+    height: 50,
   },
 
   buttonText: {
     color: colors.white,
     fontWeight: '300',
-    fontSize: 20,
+    fontSize: 15,
   },
 
   facebookButton: {
@@ -129,6 +134,7 @@ const styles = StyleSheet.create({
   signUpView : {
     flexWrap: 'wrap',
     justifyContent: 'center',
+    marginTop: -metrics.baseMargin * 4,
   },
 
   signUpButton: {

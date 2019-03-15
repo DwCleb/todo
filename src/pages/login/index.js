@@ -68,10 +68,10 @@ class Login extends Component {
       password,
     } = this.state;
     return (
-      <View style={styles.container}> 
+      <ScrollView contentContainerStyle={styles.container} scrollEnabled={false}> 
         <View
           style={styles.intersecao1}>
-          <Intersecao1 /> 
+          <Intersecao1 PWidth="100" PHeight="100" /> 
         </View>
         <View
           style={styles.agrupar1}>
@@ -139,7 +139,7 @@ class Login extends Component {
               <Text style={styles.signUpButtonText}> Don't have account </Text>
             </TouchableOpacity>
           </View>
-        </View>
+        </ScrollView>
     );
   }
 }

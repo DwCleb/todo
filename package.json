@@ -47,5 +47,14 @@
     "assets": [
       "./assets/fonts/"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "git+https://github.com/DwCleb/todo.git",
+  "author": "Cleber Junior <dwcleb@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DwCleb/todo/issues"
+  },
+  "homepage": "https://github.com/DwCleb/todo#readme",
+  "description": ""
 }

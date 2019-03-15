@@ -1,5 +1,5 @@
 /**
- * Main menu
+ * Tasks
  *
  * @author: Cleber
  */
@@ -11,14 +11,14 @@ import {
   ScrollView,
   TouchableOpacity,
 }  from 'react-native';
-import { SafeAreaView, NavigationActions, StackActions } from 'react-navigation';
+import { SafeAreaView } from 'react-navigation';
 import PropTypes from 'prop-types';
 import MenuItem from 'components/MenuItem';
 import styles from './styles';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-class Main extends Component {
+class Tasks extends Component {
 
   state = {
     loading: false,
@@ -33,18 +33,12 @@ class Main extends Component {
     const { navigation } = this.props;
     return (
       <SafeAreaView style={styles.container}>
-        <Text style={styles.title}>Home</Text>
+        <Text style={styles.title}>All tasks</Text>
         <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContentContainer} bounces={false}>
+          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="ticket" />
+          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="list-alt"  />
           <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="car" />
           <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="money"  />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="list-alt"  />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="ticket" />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="plus" />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="home"  />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="car" />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="money"  />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="list-alt"  />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="ticket" />
           <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="plus" />
           <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="home"  />
         </ScrollView>
@@ -58,4 +52,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default Tasks;

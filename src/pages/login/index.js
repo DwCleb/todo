@@ -46,6 +46,7 @@ import styles from './styles';
 class Login extends Component {
   static navigationOptions = {
     header: null,
+    headerStyle: null,
   };
 
   state = {
@@ -56,7 +57,7 @@ class Login extends Component {
 
   signIn = () => {
     const { navigation } = this.props;
-    navigation.navigate('Main');
+    navigation.navigate('Stack');
   }
 
 

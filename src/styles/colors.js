@@ -11,7 +11,9 @@ export default {
   primary: '#5C6BC0',
   secondary: '#00E5FF',
   grey: 'rgba(226, 231, 234, 1)',
+  gray: 'rgba(226, 231, 234, 1)',
   darkGrey: 'rgba(183, 195, 200, 1)',
+  darkGray: 'rgba(183, 195, 200, 1)',
   info: 'rgba(185,220,233, 1)',
   blue: 'rgba(4, 134, 193, 1)',
   lightOrange: '#FFF3E0',
@@ -21,6 +23,7 @@ export default {
   danger: '#C15B58', // '#E37A7A',
 
   transparent: 'transparent',
+  primaryTransparent: 'rgba(92,107,192, 0.4)',
   darkTransparent: 'rgba(0, 0, 0, 0.6)',
   blackTransparent: 'rgba(0, 0, 0, 0.2)',
   whiteTransparent: 'rgba(255, 255, 255, 0.3)',

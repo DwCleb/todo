@@ -5,18 +5,17 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginHorizontal: metrics.basePadding * 1.5,
-    width: metrics.screenWidth / 4,
+    marginHorizontal: 5,
   },
 
   iconContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: colors.light,
-    borderWidth: 1,
+    borderColor: colors.primaryTransparent,
+    borderWidth: 0.7,
     borderRadius: metrics.baseRadius * 4,
     padding: metrics.basePadding,
-    marginTop: metrics.baseMargin / 2,
+    marginTop: 10,
     width: 124.71,
     height: 124.71,
   },

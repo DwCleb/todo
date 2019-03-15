@@ -21,7 +21,7 @@ export default class HeaderRight extends Component {
           rounded
           source={{
             uri:
-              'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+              'https://avatars3.githubusercontent.com/u/30187750?s=460&v=4',
           }}
           containerStyle={{ width: 38, height: 38 }}
         />

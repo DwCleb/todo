@@ -8,6 +8,10 @@ export default {
   black: '#000',
   none: 'none',
 
+  dead: '#FF6565',
+  done: '#65E865',
+  open: '#FFDD00',
+
   primary: '#5C6BC0',
   secondary: '#00E5FF',
   grey: 'rgba(226, 231, 234, 1)',
@@ -27,6 +31,5 @@ export default {
   darkTransparent: 'rgba(0, 0, 0, 0.6)',
   blackTransparent: 'rgba(0, 0, 0, 0.2)',
   whiteTransparent: 'rgba(255, 255, 255, 0.3)',
-  prixpay: 'rgba(0, 54, 93, 1)',
   facebook: '#4267b2',
 };

@@ -19,10 +19,11 @@ class AddTask extends Component {
   static propTypes = {
     isVisible: PropTypes.bool.isRequired,
     toggleModal: PropTypes.func.isRequired,
+    toggleMessageModal: PropTypes.func.isRequired,
   };
 
   state = {
-    switch: true,
+    switch: false,
   }
 
   toggleSwitch = () => {
@@ -34,6 +35,7 @@ class AddTask extends Component {
     const {
       isVisible,
       toggleModal,
+      toggleMessageModal,
     } = this.props;
 
     const { switchValue } = this.state;
@@ -101,7 +103,7 @@ class AddTask extends Component {
                 }
               }
             />
-            <Text style={{fontSize: 8, marginRight: -35,}}>important</Text>
+            <Text style={{fontSize: 8, marginLeft: -5, marginTop: 2, textAlign: 'center'}}>important</Text>
             </View>
           </View>
         </View>
@@ -115,7 +117,7 @@ class AddTask extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.confirmButton}
-            onPress={ () => toggleModal() }
+            onPress={ () => toggleMessageModal() }
           >
             <Text style={styles.confirmText}>Confirm</Text>
           </TouchableOpacity>

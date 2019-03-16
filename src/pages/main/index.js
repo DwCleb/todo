@@ -15,6 +15,7 @@ import { SafeAreaView, NavigationActions, StackActions } from 'react-navigation'
 import PropTypes from 'prop-types';
 import MenuItem from 'components/MenuItem';
 import AddTask from 'components/AddTask';
+import TaskMessage from 'components/TaskMessage';
 import styles from './styles';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -24,6 +25,7 @@ class Main extends Component {
   state = {
     loading: false,
     modalVisible: false,
+    modalMessageVisible: false,
   };
 
 
@@ -32,8 +34,20 @@ class Main extends Component {
     this.setState({ modalVisible: !modalVisible});
   }
 
+  toggleMessageModal = () => {
+    const { modalMessageVisible } = this.state;
+    this.setState({
+      modalVisible: false,
+    });
+    setTimeout(() => {
+      this.setState({
+        modalMessageVisible: !modalMessageVisible,
+      });
+    }, 500);
+  }
+
   render() {
-    const { modalVisible } = this.state;
+    const { modalVisible, modalMessageVisible } = this.state;
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.titleView}>
@@ -57,6 +71,11 @@ class Main extends Component {
         <AddTask 
           isVisible={modalVisible}
           toggleModal={this.toggleModal}
+          toggleMessageModal={this.toggleMessageModal}
+        />
+        <TaskMessage 
+          isVisible={modalMessageVisible}
+          toggleMessageModal={this.toggleMessageModal}
         />
       </SafeAreaView>
     );

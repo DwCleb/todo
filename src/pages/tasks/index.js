@@ -14,6 +14,8 @@ import {
 import { SafeAreaView } from 'react-navigation';
 import PropTypes from 'prop-types';
 import Task from 'components/Task';
+import AddTask from 'components/AddTask';
+import TaskMessage from 'components/TaskMessage';
 import styles from './styles';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -22,9 +24,29 @@ class Tasks extends Component {
 
   state = {
     loading: false,
+    modalVisible: false,
+    modalMessageVisible: false,
   };
 
+  toggleModal = () => {
+    const { modalVisible } = this.state;
+    this.setState({ modalVisible: !modalVisible});
+  }
+
+  toggleMessageModal = () => {
+    const { modalMessageVisible } = this.state;
+    this.setState({
+      modalVisible: false,
+    });
+    setTimeout(() => {
+      this.setState({
+        modalMessageVisible: !modalMessageVisible,
+      });
+    }, 500);
+  }
+
   render() {
+    const { modalVisible, modalMessageVisible } = this.state;
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.titleView}>
@@ -54,9 +76,22 @@ class Tasks extends Component {
         </ScrollView>
         <TouchableOpacity
           style={styles.addButton}
+          onPress={ () => this.toggleModal()}
         >
           <Icon name="plus" size={25} color="#FFFFFF" />
         </TouchableOpacity>
+
+        <AddTask 
+          isVisible={modalVisible}
+          toggleModal={this.toggleModal}
+          toggleMessageModal={this.toggleMessageModal}
+        />
+
+        <TaskMessage 
+          isVisible={modalMessageVisible}
+          toggleMessageModal={this.toggleMessageModal}
+        />
+
       </SafeAreaView>
     );
   }

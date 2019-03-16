@@ -3,119 +3,116 @@ import { StyleSheet } from 'react-native';
 import { metrics, colors, general } from 'styles';
 
 const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    backgroundColor: colors.white,
-    padding: metrics.basePadding * 2,
-    alignItems: 'stretch',
-  },
-
-  scroll: {
+  
+  content:{
+    height: 360,
+    width: metrics.screenWidth * 0.9,
     backgroundColor: colors.white,
   },
 
+  contentView: {
+    width: '100%',
+    height: 72,
+    padding: metrics.basePadding,
+    alignItems: 'flex-start',
+    borderBottomWidth: 0.6,
+    borderBottomColor: colors.blackTransparent,
+  },
+  
   title: {
-    ...general.title,
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    color: colors.dark,
   },
 
-  inputTitle: {
-    ...general.inputTitle,
-  },
-
-  input: {
-    ...general.input,
-  },
-
-  inputHalf: {
-    ...general.inputHalf,
-  },
-
-  inputDDD: {
-    ...general.inputDDD,
+  taskTitle: {
+    textAlign: 'left',
+    color: colors.dark,
+    fontFamily: 'Montserrat-Regular',
+    marginTop: -(metrics.baseMargin - 5),
+    marginBottom: metrics.baseMargin,
+    fontSize: 12,
   },
   
-  inputTelephone: {
-    ...general.inputTelephone,
-  },
-
-  button: {
-    ...general.button,
-    marginTop: metrics.baseMargin * 3,
-    marginBottom: metrics.baseMargin * 2,
-  },
-
-  link: {
-    ...general.link,
+  taskText: {
+    textAlign: 'left',
+    color: colors.darker,
+    fontFamily: 'Montserrat-Regular',
+    fontWeight: '600',
+    marginTop: -(metrics.baseMargin - 10),
+    marginBottom: metrics.baseMargin,
+    fontSize: 19,
   },
   
-  linkText: {
-    ...general.linkText,
+  memberTitle: {
+    fontSize: 12,
+    textAlign: 'left',
+    color: colors.dark,
+    fontFamily: 'Montserrat-Regular',
+    marginTop: -(metrics.baseMargin),
+    marginBottom: (metrics.baseMargin - 5),
+  },
+ 
+  addMemberButton: {
+    alignItems: 'flex-end',
+    borderWidth: 0.4, 
+    padding: 7,
+    borderRadius: 14,
+    width: 90,
+    borderColor: colors.secondary,
   },
   
-  linkTextAccess: {
-    ...general.linkTextAccess,
-  },
-
-  buttonText: {
-    ...general.buttonText,
-  },
-
-  signUpButton: {
-    marginTop: metrics.baseMargin * 4,
-    backgroundColor: colors.light,
-    padding: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  signUpButtonText: {
-    marginTop: metrics.baseMargin,
-    color: colors.light,
+  addMemberText: {
     textAlign: 'center',
+    color: colors.secondary,
+    fontSize: 10,
+    fontFamily: 'Montserrat-Regular',
+  },
+  
+  deadlineTitle: {
+    fontSize: 12,
+    textAlign: 'left',
+    color: colors.dark,
+    fontFamily: 'Montserrat-Regular',
+    marginTop: -(metrics.baseMargin),
+    marginBottom: (metrics.baseMargin - 5),
+  },
+  
+  contentFooterView: {
+    width: '100%',
+    height: 72,
+    padding: metrics.basePadding,
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+    flexDirection: 'row',
+    borderBottomWidth: 0.6,
+    borderBottomColor: colors.darkTransparent,
+  },
+  
+  cancelButton: {
+    backgroundColor: colors.transparent,
+    alignSelf: 'center',
+    marginHorizontal: metrics.baseMargin,
   },
 
-  pickerStyle:{
-    ...general.pickerStyle,
-  },
-
-  pickerTextStyle:{
-    ...general.pickerTextStyle,
-  },
-
-  pickerDropdownStyle: {
-    ...general.pickerDropdownStyle,
-  },
-
-  pickerDropdownTextStyle: {
-    ...general.pickerDropdownTextStyle,
-  },
-
-  pickerDropdownTextHighlightStyle: {
-    ...general.pickerDropdownTextHighlightStyle,
-  },
-
-  modal: {
-    padding: 0,
-    width: metrics.screenWidth,
-    height: metrics.screenHeight,
-    margin: 0,
-  },
-
-  buttonBack: {
-    width: metrics.screenWidth,
-    height: 50,
-    backgroundColor: colors.darker,
-    borderColor: colors.danger,
-    borderWidth: 1,
+  cancelText: {
     textAlign: 'center',
-    alignItems: 'center',
+    color: colors.dark,
+    fontFamily: 'Montserrat-Regular',
+  },
+  
+  confirmButton: {
+    backgroundColor: colors.secondary,
+    width: 95,
+    height: 35,
     justifyContent: 'center',
   },
-
-  textBack: {
-    color: colors.light,
+  
+  confirmText: {
+    textAlign: 'center',
+    color: colors.white,
+    fontFamily: 'Montserrat-Regular',
   },
-
 });
 
 export default styles;

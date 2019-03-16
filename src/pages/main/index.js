@@ -14,6 +14,7 @@ import {
 import { SafeAreaView, NavigationActions, StackActions } from 'react-navigation';
 import PropTypes from 'prop-types';
 import MenuItem from 'components/MenuItem';
+import AddTask from 'components/AddTask';
 import styles from './styles';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -22,15 +23,17 @@ class Main extends Component {
 
   state = {
     loading: false,
+    modalVisible: false,
   };
 
-  navigateOnPress(route) {
-    const { navigation } = this.props;
-    navigation.navigate(route);
+
+  toggleModal = () => {
+    const { modalVisible } = this.state;
+    this.setState({ modalVisible: !modalVisible});
   }
 
   render() {
-    const { navigation } = this.props;
+    const { modalVisible } = this.state;
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.titleView}>
@@ -46,9 +49,15 @@ class Main extends Component {
         </ScrollView>
         <TouchableOpacity
           style={styles.addButton}
+          onPress={ () => this.toggleModal()}
         >
           <Icon name="plus" size={25} color="#FFFFFF" />
         </TouchableOpacity>
+
+        <AddTask 
+          isVisible={modalVisible}
+          toggleModal={this.toggleModal}
+        />
       </SafeAreaView>
     );
   }

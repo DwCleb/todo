@@ -106,8 +106,8 @@ const styles = StyleSheet.create({
 
   buttonText: {
     color: colors.white,
-    fontWeight: '300',
-    fontSize: 15,
+    fontWeight: '700',
+    fontSize: 20,
   },
 
   facebookButton: {

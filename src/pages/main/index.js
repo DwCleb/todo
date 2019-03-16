@@ -33,20 +33,16 @@ class Main extends Component {
     const { navigation } = this.props;
     return (
       <SafeAreaView style={styles.container}>
-        <Text style={styles.title}>Home</Text>
+        <View style={styles.titleView}>
+          <Text style={styles.title}>Home</Text>
+        </View>
         <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContentContainer} bounces={false}>
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="car" />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="money"  />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="list-alt"  />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="ticket" />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="plus" />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="home"  />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="car" />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="money"  />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="list-alt"  />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="ticket" />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="plus" />
-          <MenuItem navigation={navigation} onPress={() => this.navigateOnPress('')} route="" icon="home"  />
+          <MenuItem icon="list" title="Task List"/>
+          <MenuItem icon="page" title="Task Page"/>
+          <MenuItem icon="new" title="New Task"/>
+          <MenuItem icon="progress" title="Task Progress"/>
+          <MenuItem icon="late" title="Late Task"/>
+          <MenuItem icon="comment" title="Comment"/>
         </ScrollView>
         <TouchableOpacity
           style={styles.addButton}

@@ -44,7 +44,7 @@ const Task = (props) => {
               {title}
             </Text>
           </View>
-          <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex:1 }}>
+          <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex:2 }}>
             <Text style={styles.deadline}>Deadline</Text>
             <Text style={styles.deadline}>
               {date + ' '}

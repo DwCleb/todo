@@ -1,9 +1,7 @@
 import React from 'react';
 import {
   StackNavigator,
-  DrawerNavigator,
   TabNavigator,
-  SwitchNavigator,
   TabBarTop,
 } from 'react-navigation';
 
@@ -48,18 +46,7 @@ const LoginStack = StackNavigator({
 }, {
   initialRouteName: 'Login',
   navigationOptions: () => ({
-    headerStyle: {
-      backgroundColor: colors.primary,
-      height: 85,
-    },
-    headerTitleStyle: {
-      color: colors.white,
-      fontSize: 24,
-      flex: 1,
-      textAlign: 'left',
-      fontFamily: 'Montserrat-Regular',
-    },
-    headerTintColor: colors.white,
+    header: null,
   }),
 });
 

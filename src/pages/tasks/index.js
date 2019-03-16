@@ -27,10 +27,27 @@ class Tasks extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <Text style={styles.title}>All tasks</Text>
+        <View style={styles.titleView}>
+          <Text style={styles.title}>All tasks</Text>
+        </View>
         <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContentContainer} bounces={false}>
           <Task id="01" imageURL="https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg" title="Design wireframe" status="done" date="12/03" hour="12:30" />
           <Task id="02" imageURL="https://avatars3.githubusercontent.com/u/30187750?s=460&v=4" title="Developer Task" status="open" date="12/03" hour="12:30" />
+          <Task id="03" imageURL="https://avatars1.githubusercontent.com/u/25140387?s=460&v=4" title="Drink water" status="open" date="12/03" hour="12:30" />
+          <Task id="04" imageURL="https://avatars3.githubusercontent.com/u/34289440?s=460&v=4" title="Walk the dog" status="dead" date="12/03" hour="12:30" />
+          <Task id="05" imageURL="https://avatars1.githubusercontent.com/u/35339873?s=460&v=4" title="Learn Python" status="done" date="12/03" hour="12:30" />
+          <Task id="03" imageURL="https://avatars1.githubusercontent.com/u/25140387?s=460&v=4" title="Drink water" status="open" date="12/03" hour="12:30" />
+          <Task id="04" imageURL="https://avatars3.githubusercontent.com/u/34289440?s=460&v=4" title="Walk the dog" status="dead" date="12/03" hour="12:30" />
+          <Task id="05" imageURL="https://avatars1.githubusercontent.com/u/35339873?s=460&v=4" title="Learn Python" status="done" date="12/03" hour="12:30" />
+          <Task id="03" imageURL="https://avatars1.githubusercontent.com/u/25140387?s=460&v=4" title="Drink water" status="open" date="12/03" hour="12:30" />
+          <Task id="04" imageURL="https://avatars3.githubusercontent.com/u/34289440?s=460&v=4" title="Walk the dog" status="dead" date="12/03" hour="12:30" />
+          <Task id="05" imageURL="https://avatars1.githubusercontent.com/u/35339873?s=460&v=4" title="Learn Python" status="done" date="12/03" hour="12:30" />
+          <Task id="03" imageURL="https://avatars1.githubusercontent.com/u/25140387?s=460&v=4" title="Drink water" status="open" date="12/03" hour="12:30" />
+          <Task id="04" imageURL="https://avatars3.githubusercontent.com/u/34289440?s=460&v=4" title="Walk the dog" status="dead" date="12/03" hour="12:30" />
+          <Task id="05" imageURL="https://avatars1.githubusercontent.com/u/35339873?s=460&v=4" title="Learn Python" status="done" date="12/03" hour="12:30" />
+          <Task id="03" imageURL="https://avatars1.githubusercontent.com/u/25140387?s=460&v=4" title="Drink water" status="open" date="12/03" hour="12:30" />
+          <Task id="04" imageURL="https://avatars3.githubusercontent.com/u/34289440?s=460&v=4" title="Walk the dog" status="dead" date="12/03" hour="12:30" />
+          <Task id="05" imageURL="https://avatars1.githubusercontent.com/u/35339873?s=460&v=4" title="Learn Python" status="done" date="12/03" hour="12:30" />
           <Task id="03" imageURL="https://avatars1.githubusercontent.com/u/25140387?s=460&v=4" title="Drink water" status="open" date="12/03" hour="12:30" />
           <Task id="04" imageURL="https://avatars3.githubusercontent.com/u/34289440?s=460&v=4" title="Walk the dog" status="dead" date="12/03" hour="12:30" />
           <Task id="05" imageURL="https://avatars1.githubusercontent.com/u/35339873?s=460&v=4" title="Learn Python" status="done" date="12/03" hour="12:30" />

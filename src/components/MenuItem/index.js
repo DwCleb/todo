@@ -3,31 +3,54 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import PropTypes from 'prop-types';
 import styles from './styles';
+import TaskList from 'components/TaskList';
+import TaskPage from 'components/TaskPage';
+import TaskNew from 'components/TaskNew';
+import TaskProgress from 'components/TaskProgress';
+import TaskLate from 'components/TaskLate';
+import Comment from 'components/Comment';
 
 export default class MenuItem extends Component {
-  static propTypes = {
-    navigation: PropTypes.shape({
-      navigate: PropTypes.func,
-    }).isRequired,
-    title: PropTypes.string.isRequired,
-    route: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired,
+  transformToComponent = (component) => {
+    switch (component) {
+      case 'list':
+        return <TaskList />;
+        break;
+      case 'page':
+        return <TaskPage />;
+        break;
+      case 'new':
+        return <TaskNew />;
+        break;
+      case 'progress':
+        return <TaskProgress />;
+        break;
+      case 'late':
+        return <TaskLate />;
+        break;
+      case 'comment':
+        return <Comment />;
+        break;
 
-    onPress: PropTypes.func.isRequired,
-  };
+      default:
+        return '';
+        break;
+    }
+  }
 
   render() {
     const {
-      navigation,
-      title,
       icon,
-      onPress,
+      title,
     } = this.props;
 
     return(
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => onPress()} activeOpacity={0.8} style={styles.iconContainer}>
-          <Icon name={icon} size={25} color="#5C6BC0" />
+        <TouchableOpacity activeOpacity={0.8} style={styles.iconContainer}>
+          {this.transformToComponent(icon)}
+          <Text style={styles.title}>
+            {title}
+          </Text>
         </TouchableOpacity>
       </View>
     )

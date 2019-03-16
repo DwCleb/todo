@@ -20,6 +20,14 @@ const styles = StyleSheet.create({
     height: 124.71,
   },
 
+  title: {
+    textAlign: 'center',
+    fontSize: 11,
+    fontFamily: 'Montserrat-Regular',
+    color: colors.primary,
+    marginTop: metrics.baseMargin - 10,
+  },
+
 });
 
 export default styles;

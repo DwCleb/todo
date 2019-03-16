@@ -44,10 +44,6 @@ import Logo from 'components/Logo';
 import styles from './styles';
 
 class Login extends Component {
-  static navigationOptions = {
-    header: null,
-    headerStyle: null,
-  };
 
   state = {
     login: '',

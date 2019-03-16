@@ -10,16 +10,23 @@ const styles = StyleSheet.create({
     paddingRight: 80,
     paddingLeft: 80,
   },
-
+  
   scrollView: {
     width: metrics.screenWidth,
+  },
+
+  titleView: {
+    width: metrics.screenWidth,
+    height: 50,
+    backgroundColor: colors.white,
+    color: colors.darker,
   },
 
   title: {
     ...general.title,
     color: colors.darker,
     alignSelf: 'flex-start',
-    marginLeft: -metrics.baseMargin * 4,
+    marginLeft: metrics.baseMargin,
     fontSize: 15,
     marginTop: metrics.baseMargin,
     marginBottom: -metrics.baseMargin,
@@ -30,9 +37,9 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     flexWrap: 'wrap',
     alignItems: 'center',
-    marginTop: metrics.baseMargin,
     paddingHorizontal: 33,
     justifyContent: 'center',
+    paddingBottom: metrics.basePadding * 4,
   },
 
   addButton: {

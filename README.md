@@ -1,9 +1,9 @@
-## Layout Change
+# Layout Change
 
-# PrintScreen Result
+## PrintScreen Result
 
-![alt text](printscreens/p1.png?raw=true "Login")
-![alt text](printscreens/p2.png?raw=true "Home")
-![alt text](printscreens/p3.png?raw=true "All Tasks")
-![alt text](printscreens/p4.png?raw=true "Add New Task")
-![alt text](printscreens/p5.png?raw=true "Added")
+![alt text size](printscreens/p1.png?raw=true "Login"){:height="450px" width="250px"}
+![alt text size](printscreens/p2.png?raw=true "Home"){:height="450px" width="250px"}
+![alt text size](printscreens/p3.png?raw=true "All Tasks"){:height="450px" width="250px"}
+![alt text size](printscreens/p4.png?raw=true "Add New Task"){:height="450px" width="250px"}
+![alt text size](printscreens/p5.png?raw=true "Added"){:height="450px" width="250px"}
